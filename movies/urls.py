@@ -5,7 +5,7 @@ from movies.views import directors
 
 urlpatterns = [
     url(
-        r'^$',          # /
+        'movies/',
         views.movies,    # Nombre de la funcion dentro del fichero views.py
         name = 'movies'  # 
     ),

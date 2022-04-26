@@ -1,20 +1,31 @@
 from django.shortcuts import render
-from imdb import available_access_systems
+
+from.models import Director, Movie
 
 # Movies View: List Movies
 def movies( request ) :
 
+    movies = Movie.objects
+    print( movies ) 
+
     return render(
         request,
         'movies.html',
-        context = {}
+        context = {
+            'movies': movies
+        }
     )
 
 # Directors View: List Directors
 def directors( request ) :
 
+    directors = Director.objects
+    print( directors ) 
+
     return render(
         request,
         'directors.html',
-        context = {}
+        context = {
+            'directors': directors
+        }
     )
