@@ -17,6 +17,22 @@ def movies( request ) :
     )
 
 # Directors View: List Directors
+def detail( request, movie_id ) :
+    movie = Movie.objects.get( id = movie_id )      # Tambien funciona -> movie = Movie.objects.get( pk = movie_id )
+
+    # print( 'movie_id', movie_id )
+    # print( type( movie ) )
+    # print( 'movie', movie.title, movie.synopsis )
+
+    return render(
+        request,
+        'detail.html',
+        context = {
+            'movie': movie
+        }
+    )
+
+# Directors View: List Directors
 def directors( request ) :
 
     directors = Director.objects

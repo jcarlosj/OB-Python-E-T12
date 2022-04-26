@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% if movie %}
+    <h1>{{ movie.title }}</h1>
+    {% if movie.director %}
+        <p><strong>Director: </strong>{{ movie.director.first_name }} {{ movie.director.last_name }} </p>
+    {% endif %}
+    <p>{{ movie.synopsis }}</p>
+    {% else %}
+        <p>No movie is available.</p>
+    {% endif %}
+
+{% endblock %}
