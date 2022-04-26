@@ -29,4 +29,4 @@ class Movie( models.Model ) :
         return reverse( 'movie-detail', args=[ str( self.id ) ] )
 
     def __str__( self ) :
-        return f'{ self.title } ({ self.director })'
+        return f'{ self.title } ({ self.release_date })'
